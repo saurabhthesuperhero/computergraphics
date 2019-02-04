@@ -16,7 +16,8 @@ void main()
 
 	//NOW FOR BALL;
 	int bx=10,by=10,bix=10,biy=10;
-
+	 outtextxy(240,0,"Player 1:   Player 2");
+		line(getmaxx()/2,0,getmaxx()/2,getmaxy());
 	while(1)
 	{
 		line(getmaxx()/2,0,getmaxx()/2,getmaxy());
@@ -25,9 +26,19 @@ void main()
 		fillellipse(bx,by,10,10);
 		bx=bx+bix;
 		by=by+biy;
+
+		if (bx<=0 || bx>=getmaxx())
+			bx=10;
+		if (by<=0 || by>=getmaxy())
+			biy=-biy;
+
+	       //	if (bx>=getmaxx()-20  ||  by<=y1 &&  by>=y2)
+		//	bix=-bix;
 		setfillstyle(1,14);
 		fillellipse(bx,by,10,10);
 		delay(100);
+
+
 	}
 	if(kbhit())
 	{
