@@ -27,8 +27,16 @@ void main()
 		bx=bx+bix;
 		by=by+biy;
 
+	    if(bx>=getmaxx()-20 || bx<=20)
+		{
+	  if(by>y1t && by<y2t || by>y1 && by<y2)
+		{
+		bix=-bix;
+		}
+		}
+
 		if (bx<=0 || bx>=getmaxx())
-			bx=10;
+			bx=getmaxx()/2;
 		if (by<=0 || by>=getmaxy())
 			biy=-biy;
 
